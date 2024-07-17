@@ -18,7 +18,7 @@ const SingleProduct = () => {
 
     useEffect(() => {
         const queryParams = new URLSearchParams({ ...filters, sortBy }).toString();
-        const newUrl = `/new-products?${queryParams}`;
+        const newUrl = `?${queryParams}`;
         window.history.replaceState({}, '', newUrl);
         console.log(filters); // Update the URL without reloading
     }, [filters, sortBy]);
