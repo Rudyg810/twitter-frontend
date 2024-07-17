@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "HM Sans Regular";
+  src: url("https://db.onlinewebfonts.com/t/70f3e46b3bb904260d1b1a6e0f2edf08.eot");
+  src: url("https://db.onlinewebfonts.com/t/70f3e46b3bb904260d1b1a6e0f2edf08.eot?#iefix") format("embedded-opentype"),
+       url("https://db.onlinewebfonts.com/t/70f3e46b3bb904260d1b1a6e0f2edf08.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/70f3e46b3bb904260d1b1a6e0f2edf08.woff") format("woff"),
+       url("https://db.onlinewebfonts.com/t/70f3e46b3bb904260d1b1a6e0f2edf08.ttf") format("truetype"),
+       url("https://db.onlinewebfonts.com/t/70f3e46b3bb904260d1b1a6e0f2edf08.svg#HM Sans Regular") format("svg");
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+/* Reset default text decoration for links */
+a {
+  position: relative;
+  text-decoration: none;
+  color: inherit; /* Inherit text color */
+}
+
+/* Custom hover underline effect */
+a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Adjust the underline position */
+  height: 2px; /* Adjust the underline thickness */
+  width: 0; /* Start with no width */
+  background-color: currentColor; /* Use the text color for the underline */
+  transition: width 0.3s ease; /* Transition width for smooth effect */
+}
+
+.thumbnail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Additional styles can be added as needed */
+
+.thumbnail-image.hidden {
+  opacity: 0;
+  transform: scale(0.9); /* Example transform */
+}
+
+.thumbnail-image.visible {
+  opacity: 1;
+  transform: scale(1); /* Example transform */
+}
+
+
+a:hover::after {
+  width: 100%; /* Expand the underline on hover */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #888
+}
+
+/* Apply the custom font and text color globally */
+body {
+  @apply font-hm-sans text-hm-sans;
+}
